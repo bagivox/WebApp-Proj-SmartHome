@@ -28,7 +28,7 @@ body{
     position: sticky;
     top: 0;
     left: 0;
-    height: clamp(80px, 4vh, 90px);
+    height: clamp(64px, 4vh, 90px);
     font-size: 32pt;
     background-color: var(--WHITE);
     padding-top: 16px;
@@ -49,26 +49,26 @@ body{
     bottom: 0;
     left: 0;
     width: 100%;
-    height: clamp(90px, 8vh, 90px);
+    height: clamp(72px, 6vh, 8vh);
     padding: 0px 0px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: var(--WHITE);
-    box-shadow: 0 0.3em 0.6em 0px black;
+    box-shadow: 0 0 3em 1em black;
     z-index: 20;
 }
 
 .bottom-nav-container i{
-    font-size: clamp(24px, 4vh, 42px);
+    font-size: clamp(1em, 2.5em, 3em);
 }
 
 .bottom-nav-container label{
-    font-size: clamp(12px, 2.5vh, 32px);
+    font-size: clamp(1.5vh, 2em, 1.5em);
 }
 
 .bottom-nav-item{
-    background-color: white;
+    background-color: var(--WHITE);
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -100,4 +100,31 @@ body{
 
 a .fa{
     color: black;
+}
+
+.container-custom{
+    position:relative;
+    top:12px;
+    background-color: var(--OFFWHITE);
+    border-radius: 100px;
+    margin: 16px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 2em 0.5em rgba(0, 0, 0, 0.151);
+}
+
+.task-list{
+    list-style-type: none;
+    margin:0;
+    padding:0
+}
+
+.task-list .task{
+    text-align:center;
+}
+
+.task-container{
+    font-size: clamp(1.5em, 3em, 4.5em)
 }
