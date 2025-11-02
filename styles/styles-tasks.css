@@ -10,20 +10,16 @@
     --OFFWHITE: #FDFDFD;
     --SHADOW-COLOR: rgba(0, 0, 0, 0.153);
     --ACCENT:#8a3bf5;
-    --nav-color-idle: rgb(91, 91, 91);
 }
 
-.content-wrapper {
-  position: absolute;
-  top: 50px;
-  bottom: 60px;
-  left: 0;
-  right: 0;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
+.sidebar-button{
+    border:none;
+    background:none;
+    padding:0;
+}
+
+#sidebar{
+    max-width: min(300px, 75vw);
 }
 
 html{
@@ -36,9 +32,17 @@ html{
 
 body {
     margin: 0;
-    padding: 0;
-    height: 100%;
+    padding-top: 60px;
+    padding-bottom: 72px;
     background-color: var(--OFFWHITE);
+    overflow-y: auto;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
 }
 
 .bottom-nav-container i{
@@ -108,7 +112,7 @@ a .fa{
 
 .centerWindow{
     background: rgba(0,0,0,0.59);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -133,6 +137,11 @@ a .fa{
 .task-popup-properties{
     overflow-y: auto;
     flex-grow: 1;
+}
+
+#side-bar{
+    z-index:500;
+    background-color: red;
 }
 
 .popup-content-header{

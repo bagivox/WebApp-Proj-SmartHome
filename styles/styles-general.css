@@ -10,20 +10,26 @@
     --OFFWHITE: #FDFDFD;
     --SHADOW-COLOR: rgba(0, 0, 0, 0.153);
     --ACCENT:#8a3bf5;
-    --nav-color-idle: rgb(91, 91, 91);
+    --nav-color-idle: black;
 }
 
-.content-wrapper {
-  position: absolute;
-  top: 50px;
-  bottom: 60px;
-  left: 0;
-  right: 0;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
+.sidebar-button{
+    border:none;
+    background:none;
+    padding:0;
+}
+
+#sidebar{
+    max-width: min(300px, 75vw);
+}
+
+.transition-icon {
+  transition: transform 0.3s ease;
+}
+
+.collapse.show + .transition-icon,
+.nav-link[aria-expanded="true"] .transition-icon {
+  transform: rotate(180deg);
 }
 
 html{
@@ -36,9 +42,17 @@ html{
 
 body {
     margin: 0;
-    padding: 0;
-    height: 100%;
+    padding-top: 60px;
+    padding-bottom: 72px;
     background-color: var(--OFFWHITE);
+    overflow-y: auto;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
 }
 
 .bottom-nav-container i{
