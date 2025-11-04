@@ -6,17 +6,63 @@
     --bold: 700;
     --black: 900;
     
-    --WHITE: #FFFFFF;
-    --OFFWHITE: #FDFDFD;
+    --NAV-BG: #FFFFFF;
+    --PAGE-BACKGROUND: #FDFDFD;
     --SHADOW-COLOR: rgba(0, 0, 0, 0.153);
-    --ACCENT:#8a3bf5;
-    --nav-color-idle: black;
+    --ACCENT: #3b82f6;
+    --NAV-ITEM-COLOR: black;
+    --NAVBAR-COLOR:white;
+}
+
+body.darkmode {
+  --NAV-BG: #2d2d30;
+  --PAGE-BACKGROUND: #1e1e1e;
+  --NAV-ITEM-COLOR: #ffffff;
+  background-color: var(--PAGE-BACKGROUND);
+  color: var(--NAV-ITEM-COLOR);
+}
+
+.navbar{
+    background-color: var(--NAV-BG);
+}
+
+.navbar-top .fa{
+    color: var(--NAV-ITEM-COLOR);
+}
+
+body.darkmode .navbar-top .navbar-toggler-icon{
+    filter:invert();
 }
 
 .sidebar-button{
     border:none;
     background:none;
     padding:0;
+}
+
+/* Dark mode overrides for offcanvas */
+body.darkmode .offcanvas {
+    background-color: #121212; /* dark background */
+    color: #e3e3e3;           /* text color */
+}
+
+/* Links inside offcanvas */
+body.darkmode .offcanvas a.nav-link {
+    color: #e3e3e3;
+}
+
+/* Collapsible headers inside offcanvas */
+body.darkmode .offcanvas .offcanvas-header {
+    border-bottom: 1px solid #333; /* subtle separator for dark mode */
+}
+
+/* Buttons inside offcanvas */
+body.darkmode .offcanvas .btn-close {
+    filter: invert(1); /* makes the close X white */
+}
+
+body.darkmode .offcanvas .fa{
+    color: #e3e3e3;
 }
 
 #sidebar{
@@ -51,7 +97,7 @@ body {
     margin: 0;
     padding-top: 60px;
     padding-bottom: 72px;
-    background-color: var(--OFFWHITE);
+    background-color: var(--PAGE-BACKGROUND);
     overflow-y: auto;
 }
 
@@ -79,7 +125,7 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: var(--nav-color-idle)
+    color: var(--NAV-ITEM-COLOR)
 }
 
 .bottom-nav-item:active{

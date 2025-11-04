@@ -11,6 +11,7 @@ const deviceProperties = document.getElementById("device-properties");
 const btn_submitTask = document.getElementById("submit-task");
 const btn_cancelTask = document.getElementById("cancel-task");
 const taskList = document.getElementById("task-list");
+let darkmode = localStorage.getItem("darkmode");
 
 let selectedDevice = null;
 init();
