@@ -133,7 +133,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- BOTTOM NAVBAR -->
     <nav class="navbar fixed-bottom pt-3 shadow-lg">
         <a class="nav-item nav-link bottom-nav-item" href="home.html">
@@ -159,8 +159,73 @@
          Otherwise navbar will block parts of the implementation            -->
     <body>
         <div class="content-wrapper">
+            <div class="text-center mt-5 pt-4">
+                <!-- Profile Picture -->
+                <div class="mb-3">
+                    <img src="images/profile-picture.png" alt="Profile Picture"
+                        class="rounded-circle" width="120" height="120">
+                </div>
 
+                <!-- Username with Edit Pencil -->
+                <div class="mb-4">
+                    <h3 class="username">Horizon_User <i
+                            class="fa fa-edit ms-2"></i></h3>
+                </div>
+
+                <!-- Saved Addresses -->
+                <div class="mb-4">
+                    <a href="sidebar-links/addresses.html" style="color:inherit;" class="text-decoration-none saved-addresses-container d-flex justify-content-center align-items-baseline">
+                        <h5 class="mb-3">Saved Addresses</h5>
+                        <i class="fa fa-pencil ms-2" style="color:inherit;"></i>
+                    </a>
+                    <div class="p-2 mb-1 rounded small">3451, Tudor Rd
+                        - Primary</div>
+                    <div class="p-2 mb-1 rounded small">700, Augusta
+                        Park - Vacation</div>
+                    <div class="p-2 rounded small">1840, Washington St
+                        - Office</div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div>
+                    <button class="btn btn-primary me-2 switch-btn">
+                        <i class="fa fa-exchange-alt me-1"></i>Switch Account
+                    </button>
+                    <button class="btn btn-danger logout-btn">
+                        <i class="fa fa-sign-out-alt me-1"></i>Log Out
+                    </button>
+                </div>
+            </div>
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const usernameElement = document.querySelector('.username');
+            const switchBtn = document.querySelector('.switch-btn');
+            const logoutBtn = document.querySelector('.logout-btn');
+            
+            usernameElement.addEventListener('click', function() {
+                const currentText = this.textContent.trim();
+                const currentName = currentText.replace(' edit', '');
+                const newName = prompt('Enter new username:', currentName);
+                if (newName && newName.trim() !== '') {
+                    this.innerHTML = newName.trim() + ' <i class="fa fa-edit ms-2"></i>';
+                }
+            });
+            
+            switchBtn.addEventListener('click', function() {
+                alert('Switch Account feature would open here');
+            });
+            
+            logoutBtn.addEventListener('click', function() {
+                if (confirm('Are you sure you want to log out?')) {
+                    alert('Logged out successfully!');
+                }
+            });
+            
+            usernameElement.style.cursor = 'pointer';
+            });
+        </script>
         <script src="darkmode.js"></script>
     </body>
 </html>

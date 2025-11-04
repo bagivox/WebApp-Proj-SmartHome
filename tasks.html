@@ -134,7 +134,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- BOTTOM NAVBAR -->
     <nav class="navbar fixed-bottom pt-3 shadow-lg">
         <a class="nav-item nav-link bottom-nav-item" href="home.html">
@@ -159,67 +159,67 @@
     <!-- Work inside the <body> tag, else content will be blocked by the nav elements -->
     <body id="page-content-tasks" class="">
         <div class="content-wrapper">
-        <div class="container-fluid text-center container-custom fs-4"
-            id="task-container">
-            <div class="row">
-                <div class="col pt-2"><h3>Tasks</h3></div>
-            </div>
-            <div class="row">
-                <div id="task-list">
+            <div class="container-fluid text-center container-custom fs-4"
+                id="task-container">
+                <div class="row">
+                    <div class="col pt-2"><h3>Tasks</h3></div>
+                </div>
+                <div class="row">
+                    <div id="task-list">
 
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col my-4">
-                    <button
-                        class="btn btn-outline-primary m-auto circular-button"
-                        id="add-task-button">
-                        <i class="fa fa-plus"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="centerWindow" id="popup-container">
-            <form method="POST">
-                <div class="popup-content task-popup" id="task-popup">
-                    <div class="popup-content-header">
-                        <h5>Schedule Task</h5>
-                        <button class="exit-icon" id="popup-exit">
-                            <i class="fa fa-x"></i>
+                <div class="row">
+                    <div class="col my-4">
+                        <button
+                            class="btn btn-outline-primary m-auto circular-button"
+                            id="add-task-button">
+                            <i class="fa fa-plus"></i>
                         </button>
                     </div>
+                </div>
+            </div>
+            <div class="centerWindow" id="popup-container">
+                    <div class="popup-content task-popup" id="task-popup">
+                        <div class="popup-content-header">
+                            <h5>Schedule Task</h5>
+                            <button class="exit-icon" id="popup-exit">
+                                <i class="fa fa-x"></i>
+                            </button>
+                        </div>
 
-                    <div class="task-popup-properties">
-                        <div class="row">
-                            <label class="form-label fw-bold">Properties</label>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                Device
+                        <div class="task-popup-properties">
+                            <div class="row">
+                                <label class="form-label fw-bold">Properties</label>
                             </div>
-                            <div class="col-6">
-                                <select id="device-selector">
-                                    <option value>Select Device</option>
-                                </select>
+                            <div class="row">
+                                <div class="col-6">
+                                    Device
+                                </div>
+                                <div class="col-6">
+                                    <select id="device-selector">
+                                        <option value>Select Device</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div id="device-properties">
+                            <div id="device-properties">
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 mt-2">
-                            <label for="task-time" class="form-label fw-bold">Time</label>
-                            <input type="time" id="task-time" class="form-control">
+                        <div class="row">
+                            <div class="mb-3 mt-2">
+                                <label for="task-time" class="form-label fw-bold">Time</label>
+                                <input type="time" id="task-time" class="form-control">
+                            </div>
                         </div>
-                    </div>
-                        <div id="form-actions" class="text-center">
-                            <button id="cancel-task" class="btn btn-outline-secondary">Cancel</button>
-                            <button id="submit-task" class="btn btn-success">Submit</button>
+                            <div id="form-actions" class="text-center">
+                                <button id="cancel-task" class="btn btn-outline-secondary">Cancel</button>
+                                <button id="submit-task" class="btn btn-success">Submit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
     </body>

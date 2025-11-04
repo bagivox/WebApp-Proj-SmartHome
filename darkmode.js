@@ -1,5 +1,3 @@
-console.log("Darkmode status:", localStorage.getItem("darkmode"));
-
 document.addEventListener("DOMContentLoaded", () => {
     const enableDarkmode = () => {
     document.body.classList.add("darkmode");

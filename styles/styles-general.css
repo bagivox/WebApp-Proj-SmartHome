@@ -12,12 +12,14 @@
     --ACCENT: #3b82f6;
     --NAV-ITEM-COLOR: black;
     --NAVBAR-COLOR:white;
+    --CONTAINER-COLOR: #FFFFFF;
 }
 
 body.darkmode {
   --NAV-BG: #2d2d30;
   --PAGE-BACKGROUND: #1e1e1e;
-  --NAV-ITEM-COLOR: #ffffff;
+  --NAV-ITEM-COLOR: #e8e8e8;
+  --CONTAINER_COLOR: #000000;
   background-color: var(--PAGE-BACKGROUND);
   color: var(--NAV-ITEM-COLOR);
 }
