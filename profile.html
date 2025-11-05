@@ -169,15 +169,18 @@
 
                 <!-- Username with Edit Pencil -->
                 <div class="mb-4">
-                    <div class="username-container d-flex justify-content-center align-items-baseline">
+                    <div
+                        class="username-container d-flex justify-content-center align-items-baseline">
                         <h3 class="username">Horizon_User</h3>
-                        <i class="fa fa-edit ms-2"></i>
+                        <i id="edit-icon" class="fa fa-edit ms-2"></i>
                     </div>
                 </div>
 
                 <!-- Saved Addresses -->
                 <div class="mb-4">
-                    <a href="sidebar-links/addresses.html" style="color:inherit;" class="text-decoration-none saved-addresses-container d-flex justify-content-center align-items-baseline">
+                    <a href="sidebar-links/addresses.html"
+                        style="color:inherit;"
+                        class="text-decoration-none saved-addresses-container d-flex justify-content-center align-items-baseline">
                         <h5 class="mb-3">Saved Addresses</h5>
                         <i class="fa fa-pencil ms-2" style="color:inherit;"></i>
                     </a>
@@ -191,7 +194,8 @@
 
                 <!-- Action Buttons -->
                 <div>
-                    <a href="account/login.html" class="btn btn-primary me-2 switch-btn">
+                    <a href="account/login.html"
+                        class="btn btn-primary me-2 switch-btn">
                         <i class="fa fa-exchange-alt me-1"></i>Switch Account
                     </a>
                     <button class="btn btn-danger logout-btn">
@@ -206,30 +210,36 @@
             const usernameElement = document.querySelector('.username');
             const switchBtn = document.querySelector('.switch-btn');
             const logoutBtn = document.querySelector('.logout-btn');
-            const loginName = localStorage.getItem("userFullName");
-            
-            //load user name from storage
+            let loginName = localStorage.getItem("userFullName");
+            const editIcon = document.getElementById("edit-icon");        
+
+            if (!loginName || loginName.trim() === "") {
+                loginName = "Horizon User";
+                localStorage.setItem("userFullName", loginName);
+            }
             usernameElement.textContent = loginName;
-            
-            usernameElement.addEventListener('click', function() {
-                const currentText = this.textContent.trim();
-                const currentName = currentText.replace(' edit', '');
+
+            const editUsername = () => {
+                const currentName = usernameElement.textContent.trim();
                 const newName = prompt('Enter new username:', currentName);
                 if (newName && newName.trim() !== '') {
                     localStorage.setItem("userFullName", newName.trim());
-                    //update the display username after changing
                     usernameElement.textContent = newName.trim();
                 }
-            });
+            };
             
+            usernameElement.addEventListener('click', editUsername);
+            editIcon.addEventListener('click', editUsername);
+
+            usernameElement.style.cursor = 'pointer';
+            editIcon.style.cursor = 'pointer';
+
             logoutBtn.addEventListener('click', function() {
                 if (confirm('Are you sure you want to log out?')) {
                     alert('Logged out successfully!');
                 }
             });
-            
-            usernameElement.style.cursor = 'pointer';
-            });
+        });
         </script>
         <script src="darkmode.js"></script>
     </body>

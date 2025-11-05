@@ -69,6 +69,16 @@ body.darkmode .btn-outline:hover {
   color: white;
 }
 
+body.darkmode .user-card {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+body.darkmode .user-card .card-title,
+body.darkmode .user-card .card-text {
+  color: var(--text-primary);
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--text-black);

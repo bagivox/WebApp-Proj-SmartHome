@@ -1,9 +1,12 @@
+let users = [];
+
 document.getElementById("signupForm").addEventListener("submit", (e) => {
   e.preventDefault()
 
   const fullName = document.getElementById("fullName").value.trim()
   const email = document.getElementById("email").value.trim()
   const age = document.getElementById("age").value
+
 
   if (!validateForm(fullName, email, age)) {
     return
