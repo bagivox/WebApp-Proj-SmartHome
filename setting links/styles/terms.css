@@ -22,14 +22,6 @@
   --text-black: black;
 }
 
-a {
-  text-decoration: none;
-}
-
-a .fa{
-  color: inherit;
-}
-
 body.darkmode {
   --bg-body: #1a1a1a;
   --bg-white: #2d2d30;
@@ -40,7 +32,6 @@ body.darkmode {
   --border-light: #444444;
   --border-gray: #666666;
   --shadow-light: rgba(0, 0, 0, 0.3);
-  --text-black: white;
 }
 
 body {
@@ -51,40 +42,6 @@ body {
   transition: background-color 0.3s ease;
 }
 
-#theme-switch {
-  height: 50px;
-  width: 50px;
-  padding: 0;
-  border-radius: 30%;
-  background-color: var(--primary-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#theme-switch:hover {
-  background-color: var(--primary-hover);
-}
-
-#theme-switch svg {
-  fill: var(--bg-light);
-}
-
-#theme-switch svg:last-child {
-  display: none;
-}
-
-body.darkmode #theme-switch svg:first-child {
-  display: none;
-}
-
-body.darkmode #theme-switch svg:last-child {
-  display: block;
-}
-
 .settings-container {
   max-width: 600px;
   margin: 0 auto;
@@ -92,15 +49,16 @@ body.darkmode #theme-switch svg:last-child {
 }
 
 .top-nav-container {
-  background-color: var(--bg-nav);
-  color: var(--text-black);
+  background-color: var(--primary-color);
+  color: var(--text-white);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 16px;
   box-shadow: 0 2px 8px var(--shadow-light);
 }
 
-#back-button{
+.nav-back {
   width: 40px;
   cursor: pointer;
   font-size: 18px;
@@ -109,7 +67,8 @@ body.darkmode #theme-switch svg:last-child {
 .app-header {
   margin: 0;
   font-size: 20pt;
-  font-weight: var(--regular);
+  font-weight: 600;
+  color: var(--text-white);
   flex-grow: 1;
   text-align: center;
 }
@@ -133,84 +92,6 @@ body.darkmode #theme-switch svg:last-child {
   padding: 16px 16px 8px 16px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.settings-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  border-bottom: 1px solid var(--border-light);
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.settings-item:last-child {
-  border-bottom: none;
-}
-
-.settings-item:hover {
-  background-color: var(--bg-light);
-}
-
-.settings-item-label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.settings-item-title {
-  font-size: 14pt;
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.settings-item-description {
-  font-size: 11pt;
-  color: var(--text-secondary);
-}
-
-.settings-item-control {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.toggle-switch {
-  width: 48px;
-  height: 28px;
-  background-color: var(--toggle-inactive);
-  border-radius: 14px;
-  position: relative;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border: none;
-  padding: 0;
-}
-
-.toggle-switch.active {
-  background-color: var(--primary-color);
-}
-
-.toggle-switch::after {
-  content: "";
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  background-color: var(--text-white);
-  border-radius: 50%;
-  top: 2px;
-  left: 2px;
-  transition: left 0.3s;
-}
-
-.toggle-switch.active::after {
-  left: 22px;
-}
-
-.settings-item-arrow {
-  color: var(--border-gray);
-  font-size: 16pt;
 }
 
 .bottom-nav-container {
@@ -239,4 +120,55 @@ body.darkmode #theme-switch svg:last-child {
 
 .bottom-nav-item:hover {
   color: var(--primary-color);
+}
+
+.form-container {
+  padding: 16px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13pt;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 13pt;
+  font-family: "Roboto", sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.form-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 14pt;
+  font-weight: 600;
+  color: var(--text-white);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: var(--primary-hover);
 }

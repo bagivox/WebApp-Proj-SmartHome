@@ -18,6 +18,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
             integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="styles/styles-profile.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
@@ -123,7 +124,7 @@
                 <div class="sidebar-bottom">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">
+                            <a class="nav-link" href="account/login.html">
                                 <i class="fa fa-right-from-bracket"></i>
                                 Log Out
                             </a>
@@ -168,8 +169,10 @@
 
                 <!-- Username with Edit Pencil -->
                 <div class="mb-4">
-                    <h3 class="username">Horizon_User <i
-                            class="fa fa-edit ms-2"></i></h3>
+                    <div class="username-container d-flex justify-content-center align-items-baseline">
+                        <h3 class="username">Horizon_User</h3>
+                        <i class="fa fa-edit ms-2"></i>
+                    </div>
                 </div>
 
                 <!-- Saved Addresses -->
@@ -188,9 +191,9 @@
 
                 <!-- Action Buttons -->
                 <div>
-                    <button class="btn btn-primary me-2 switch-btn">
+                    <a href="account/login.html" class="btn btn-primary me-2 switch-btn">
                         <i class="fa fa-exchange-alt me-1"></i>Switch Account
-                    </button>
+                    </a>
                     <button class="btn btn-danger logout-btn">
                         <i class="fa fa-sign-out-alt me-1"></i>Log Out
                     </button>
@@ -203,18 +206,20 @@
             const usernameElement = document.querySelector('.username');
             const switchBtn = document.querySelector('.switch-btn');
             const logoutBtn = document.querySelector('.logout-btn');
+            const loginName = localStorage.getItem("userFullName");
+            
+            //load user name from storage
+            usernameElement.textContent = loginName;
             
             usernameElement.addEventListener('click', function() {
                 const currentText = this.textContent.trim();
                 const currentName = currentText.replace(' edit', '');
                 const newName = prompt('Enter new username:', currentName);
                 if (newName && newName.trim() !== '') {
-                    this.innerHTML = newName.trim() + ' <i class="fa fa-edit ms-2"></i>';
+                    localStorage.setItem("userFullName", newName.trim());
+                    //update the display username after changing
+                    usernameElement.textContent = newName.trim();
                 }
-            });
-            
-            switchBtn.addEventListener('click', function() {
-                alert('Switch Account feature would open here');
             });
             
             logoutBtn.addEventListener('click', function() {
